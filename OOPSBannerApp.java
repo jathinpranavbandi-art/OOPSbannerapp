@@ -1,21 +1,26 @@
 /**
  * OOPSBannerApp
  *
- * UC2: Render OOPS as Banner using Print Statements
+ * UC5: Render OOPS as Banner using Print Statements
  *
  * @author Trinai
- * @version 2.0
+ * @version 5.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
+        String[] oopsBanner = {
+            String.join("", "  *** ", "  *** ", " ***** ", " ***** "),
+            String.join("", " ** ** ", " ** ** ", " ** **", " ** "),
+            String.join("", "** **", "** **", " ** **", " ** "),
+            String.join("", "** **", "** **", " ***** ", " *** "),
+            String.join("", "** **", "** **", " ** ", "   ** "),
+            String.join("", " ** ** ", " ** ** ", " ** ", "   ** "),
+            String.join("", "  *** ", "  *** ", " ** ", " ***** ")
+        };
 
-        System.out.println("  ***     " + "  ***     " + " *****   " + " ***** ");
-        System.out.println(" ** **    " + " ** **    " + " **  **  " + " **    ");
-        System.out.println("**   **   " + "**   **   " + " **   ** " + " **    ");
-        System.out.println("**   **   " + "**   **   " + " *****   " + " ***   ");
-        System.out.println("**   **   " + "**   **   " + " **      " + "   **  ");
-        System.out.println(" ** **    " + " ** **    " + " **      " + "   **  ");
-        System.out.println("  ***     " + "  ***     " + " **      " + " ***** ");
+        for (String line : oopsBanner) {
+            System.out.println(line);
+        }
     }
 }
