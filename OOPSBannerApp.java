@@ -3,7 +3,7 @@
  *
  * UC5: Render OOPS as Banner using Print Statements
  *
- * @author Trinai
+ * @author soumya
  * @version 5.0
  */
 public class OOPSBannerApp {
