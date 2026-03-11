@@ -1,21 +1,50 @@
-/**
- * OOPSBannerApp
- *
- * UC2: Render OOPS as Banner using Print Statements
- *
- * @author Trinai
- * @version 2.0
- */
+import java.util.HashMap;
+import java.util.Map;
+
 public class OOPSBannerApp {
 
-    public static void main(String[] args) {
+    private static final Map<Character, String[]> patternMap = new HashMap<>();
 
-        System.out.println("  ***     " + "  ***     " + " *****   " + " ***** ");
-        System.out.println(" ** **    " + " ** **    " + " **  **  " + " **    ");
-        System.out.println("**   **   " + "**   **   " + " **   ** " + " **    ");
-        System.out.println("**   **   " + "**   **   " + " *****   " + " ***   ");
-        System.out.println("**   **   " + "**   **   " + " **      " + "   **  ");
-        System.out.println(" ** **    " + " ** **    " + " **      " + "   **  ");
-        System.out.println("  ***     " + "  ***     " + " **      " + " ***** ");
+    static {
+        patternMap.put('O', new String[]{
+            "  *** ",
+            " * * ",
+            " * * ",
+            " * * ",
+            "  *** "
+        });
+        patternMap.put('P', new String[]{
+            " ***** ",
+            " * * ",
+            " ***** ",
+            " * ",
+            " * "
+        });
+        patternMap.put('S', new String[]{
+            "  **** ",
+            " * ",
+            "  *** ",
+            "     * ",
+            " **** "
+        });
+    }
+
+    public static void main(String[] args) {
+        String word = "OOPS";
+        renderBanner(word);
+    }
+
+    public static void renderBanner(String word) {
+        int height = 5;
+        for (int i = 0; i < height; i++) {
+            StringBuilder line = new StringBuilder();
+            for (char c : word.toCharArray()) {
+                String[] pattern = patternMap.get(Character.toUpperCase(c));
+                if (pattern != null) {
+                    line.append(pattern[i]).append("  ");
+                }
+            }
+            System.out.println(line.toString());
+        }
     }
 }
